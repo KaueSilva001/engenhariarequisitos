@@ -1,0 +1,117 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #204e98, #f5f7fa);
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.container {
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.form input {
+    flex: 1 1 200px;
+    padding: 0.9rem;
+    border: 1px solid #dcdcdc;
+    border-radius: 12px;
+    font-size: 1rem;
+    background: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+.form input:focus {
+    outline: none;
+    border-color: #007bff;
+    background: #fff;
+}
+
+.form button {
+    padding: 0.9rem 1.5rem;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #007bff, #00c6ff);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.4s ease;
+}
+
+.form button:hover {
+    background: linear-gradient(135deg, #0056b3, #00a0e3);
+}
+
+.despesas-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.despesa-item {
+    background: #f1f3f5;
+    padding: 1rem;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    color: #444;
+    transition: background 0.3s ease;
+}
+
+.despesa-item:hover {
+    background: #e9ecef;
+}
+
+.despesa-item button {
+    background: transparent;
+    border: none;
+    color: #dc3545;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.despesa-item button:hover {
+    color: #a71d2a;
+}
+
+.grafico-container {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 16px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.03);
+}

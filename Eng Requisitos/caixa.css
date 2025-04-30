@@ -1,0 +1,246 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Fonte geral */
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #2c2c2c !important;
+    color: #363f5f;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Container principal */
+  .container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+    color: #fff;
+  }
+  
+  /* Balanço */
+  #balance {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  
+  /* Cartões */
+  .card {
+    flex: 1;
+    background: #404040;
+    padding: 20px;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .card.total {
+    background: #0d1b2a;
+    color: #fff;
+  }
+  
+  .card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  /* Seção de transações */
+  #transaction {
+    background: #404040;
+    padding: 20px;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  #transaction .button.new {
+    display: inline-block;
+    margin-bottom: 20px;
+    background: #0d2a0f;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  
+  #transaction .button.new:hover {
+    background: #16bd3d;
+  }
+  
+  /* Tabela */
+  #data-table {
+    width: 100%;
+    border-spacing: 0 8px;
+  }
+  
+  #data-table th {
+    text-align: left;
+    padding: 12px;
+    color: #fff;
+    font-weight: 400;
+    font-size: 1rem;
+  }
+  
+  #data-table td {
+    padding: 12px;
+    background: #fff;
+    border: 0;
+    color: #9a9a9a;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+  }
+  
+  #data-table td:first-child {
+    color: #363f5f;
+  }
+  
+  /* Modal */
+  .modal-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: none; /* Altere para flex para abrir */
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal {
+    background: #656565;
+    padding: 30px;
+    border-radius: 0.5rem;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+  }
+  
+  /* Formulário */
+  .input-group {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #form {
+    background-color: #404040; 
+    color: #0d1b2a; 
+    padding: 20px;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    margin: 0;
+  }
+  
+  #form h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .input-group input {
+    background-color: #555555; 
+    color: #ffffff; /* Texto nos campos*/
+    border: 1px solid #666666; 
+    padding: 10px;
+    border-radius: 0.25rem;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .input-group input::placeholder {
+    color: #cccccc; 
+  }
+  
+  .input-group .help {
+    color: #ff7b00; /* Texto */
+    font-size: 0.9rem;
+  }
+
+  .input-group.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%;
+    gap: 10px; 
+}
+
+.button {
+    border-radius: 1rem;
+    padding: 15px 30px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    flex: 1;
+    text-align: center; 
+    font-size: 1.2rem; 
+}
+
+.button.cancel {
+    background-color: #ff0000;
+    color: white;
+    text-decoration: none; 
+}
+
+.button.cancel:hover {
+    background-color: #dc2b4c;
+}
+
+.button.cancel:focus {
+    outline: 2px solid #ff4d6e;
+}
+
+.button.save {
+    background-color: #33cc95;
+    color: white;
+}
+
+.button.save:hover {
+    background-color: #28a77a;
+}
+
+.button.save:focus {
+    outline: 2px solid #39b075;
+}
+
+  /* Rodapé */
+  footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 20px 0;
+    background: #404040;
+    color: #fff;
+    font-size: 0.9rem;
+    border-top: 1px solid #404040;
+  }
+  
+  footer a {
+    color: #5429cc;
+    text-decoration: none;
+  }
+  
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  

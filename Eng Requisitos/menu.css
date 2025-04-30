@@ -1,0 +1,119 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #9a9a9a;
+  }
+  
+  /* Botão de abrir o menu */
+  #menu-toggle {
+    position: fixed;
+    top: 8px;
+    left: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  
+  #menu-toggle i {
+    font-size: 40px !important;  
+    color: #fff !important;     
+    margin: 0;                  
+    padding: 0;                 
+  }
+  
+  
+  /* Menu */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #404040;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+  
+  /* Menu aberto */
+  .sidebar.open {
+    left: 0;
+  }
+  
+  /* Logo */
+  .logo {
+    text-align: center;
+    margin-bottom: -250px;
+  }
+  
+  /* Menu de navegação */
+  .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 20px;
+  }
+  
+  .menu a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #fff; /*cor texto menu*/
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background 0.3s;
+  }
+  
+  .menu a:hover {
+    background-color: #34495e;
+  }
+  
+  /* Botão de Sair */
+  .logout {
+    padding: 0 20px;
+  }
+  
+  #btn-sair {
+    width: 100%;
+    padding: 10px;
+    background-color: #e74c3c;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.3s;
+  }
+  
+  #btn-sair:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Conteúdo principal */
+  .content {
+    padding: 30px;
+    margin-left: 0;
+    transition: margin-left 0.3s;
+  }
+  
+  /* Quando o menu estiver aberto, o conteúdo afasta */
+  .sidebar.open ~ .content {
+    margin-left: 250px;
+  }
+  

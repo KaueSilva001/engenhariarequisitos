@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Despesas Fixas</title>
+    <link rel="stylesheet" href="despesas.css">
+    <link rel="stylesheet" href="menu-despesas.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <button id="menu-toggle">
+    <i style="font-size: 50px;">&#9776;</i> 
+  </button>
+  
+  
+    <!-- menu -->
+    <aside class="sidebar" id="sidebar">
+      <div class="logo">
+        <h2>Menu</h2>
+      </div>
+      <nav class="menu">
+        <a href="inicio.html"><i data-lucide="home"></i> Início</a>
+        <a href="caixa.html"><i data-lucide="dollar-sign"></i> Caixa</a>
+        <a href="despesas.html"><i data-lucide="credit-card"></i> Despesas Fixas</a>
+        <a href="estoque.html"><i data-lucide="box"></i> Estoque</a>
+      </nav>
+
+      <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
+    
+
+      <div class="logout">
+        <a href="login.html">
+            <button id="btn-sair">
+                <i data-lucide="log-out"></i> Sair
+            </button>
+        </a>
+    </div>
+    
+    </aside>
+  
+    <div class="container">
+        <h1>Despesas Fixas</h1>
+        <div class="form">
+            <input type="text" id="descricao" placeholder="Descrição">
+            <input type="number" id="valor" placeholder="Valor (R$)">
+            <button onclick="adicionarDespesa()">Adicionar Despesa</button>
+        </div>
+        <div class="despesas-lista" id="lista-despesas"></div>
+
+        <div class="grafico-container">
+            <canvas id="graficoDespesas"></canvas>
+        </div>
+    </div>
+
+    <script src="despesas.js"></script>
+    <script src="menu-despesas.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</body>
+</html>

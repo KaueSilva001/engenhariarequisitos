@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engenharia de Requisitos </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body, html {
+            height: 100%;
+            overflow: hidden;
+        }
+        body {
+            position: relative;
+            background: #0f2027;
+            color: #ffffff;
+        }
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+        nav a {
+            color: red;
+            text-decoration: none; 
+        }
+        
+        header {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        header .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00d4ff;
+        }
+        header nav a {
+            color: #ffffff;
+            margin-left: 60px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        header nav a:hover {
+            color: #00d4ff;
+        }
+        .hero {
+            position: relative;
+            z-index: 2;
+            height: calc(100% - 80px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .hero h1 {
+            color: rgb(0, 187, 255);
+            font-size: 60px; 
+            margin-bottom: 20px; 
+        }
+        
+        .hero p {
+            color: rgb(255, 149, 0);
+            font-size: 32px; 
+        }
+        
+        .hero .destaque {
+            color: white;
+            font-weight: bold;
+        }
+        
+        
+        
+        
+        @keyframes fadeInDown {
+            0% { opacity: 0; transform: translateY(-50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="network"></canvas>
+
+<header>
+    <div class="logo">Engenharia de Requisitos</div>
+    <nav>
+        <a href="inicio.html" style="color: rgb(255, 255, 255);">Início</a>
+        <a href="caixa.html" style="color: rgb(255, 255, 255);">Caixa</a>
+        <a href="despesas.html" style="color: rgb(255, 255, 255);">Despesas Fixas</a>
+        <a href="estoque.html" style="color: rgb(255, 255, 255);;">Estoque</a>
+        <a href="login.html" style="color: red;">Sair</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>O seu tempo vale <span class="destaque">dinheiro</span>, otimize ele!</h1>
+    <p>Anote seus gastos com facilidade e tenha o controle total das finanças da sua empresa.</p>
+</section>
+
+
+<script>
+    // Animação de fundo
+    const canvas = document.getElementById('network');
+    const ctx = canvas.getContext('2d');
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    const dots = [];
+
+    for (let i = 0; i < 100; i++) {
+        dots.push({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            vx: (Math.random() - 0.5) * 0.5,
+            vy: (Math.random() - 0.5) * 0.5
+        });
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, width, height);
+        for (let i = 0; i < dots.length; i++) {
+            let d = dots[i];
+            ctx.beginPath();
+            ctx.arc(d.x, d.y, 2, 0, Math.PI * 2);
+            ctx.fillStyle = '#00d4ff';
+            ctx.fill();
+            d.x += d.vx;
+            d.y += d.vy;
+
+            if (d.x < 0 || d.x > width) d.vx *= -1;
+            if (d.y < 0 || d.y > height) d.vy *= -1;
+
+            for (let j = i + 1; j < dots.length; j++) {
+                let d2 = dots[j];
+                let dist = Math.hypot(d.x - d2.x, d.y - d2.y);
+                if (dist < 120) {
+                    ctx.beginPath();
+                    ctx.moveTo(d.x, d.y);
+                    ctx.lineTo(d2.x, d2.y);
+                    ctx.strokeStyle = 'rgba(0, 212, 255, ' + (1 - dist / 120) + ')';
+                    ctx.stroke();
+                }
+            }
+        }
+        requestAnimationFrame(draw);
+    }
+    draw();
+
+    window.addEventListener('resize', () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+    });
+</script>
+
+
+</body>
+</html>

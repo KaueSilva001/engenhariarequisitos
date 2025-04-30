@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>projeto integrador$</title>
+    <link rel="stylesheet" href="caixa.css" />
+    <link rel="stylesheet" href="menu.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+
+  <button id="menu-toggle">
+    <i style="font-size: 50px;">&#9776;</i> 
+  </button>
+  
+  
+    <!-- menu -->
+    <aside class="sidebar" id="sidebar">
+      <div class="logo">
+        <h2>Menu</h2>
+      </div>
+      <nav class="menu">
+        <a href="inicio.html"><i data-lucide="home"></i> Início</a>
+        <a href="caixa.html"><i data-lucide="dollar-sign"></i> Caixa</a>
+        <a href="despesas.html"><i data-lucide="credit-card"></i> Despesas Fixas</a>
+        <a href="estoque.html"><i data-lucide="box"></i> Estoque</a>
+      </nav>
+
+      <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
+    
+
+      <div class="logout">
+        <a href="login.html">
+            <button id="btn-sair">
+                <i data-lucide="log-out"></i> Sair
+            </button>
+        </a>
+    </div>
+    
+    </aside>
+
+    <main class="container">
+      <section id="balance">
+        <h2 class="sr-only">Balanço</h2>
+
+        <div class="card">
+          <h3>
+            <span>Entradas</span>
+          </h3>
+          <p id="incomeDisplay">R$ 0,00</p>
+        </div>
+
+        <div class="card">
+          <h3>
+            <span>Saídas</span>
+          </h3>
+          <p id="expenseDisplay">R$ 0,00</p>
+        </div>
+
+        <div class="card total">
+          <h3>
+            <span>Total</span>
+          </h3>
+          <p id="totalDisplay">R$ 0,00</p>
+        </div>
+      </section>
+
+      <section id="transaction">
+        <h2 class="sr-only">Transações</h2>
+
+        <a href="#"
+        onclick="Modal.open()" 
+        class="button new"> + Nova transação</a>
+        <table id="data-table">
+          <thead>
+            <tr>
+              <th>Item: </th>
+              <th>Quantidade: </th>
+              <th>Valor: </th>
+              <th>Data: </th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </section>
+    </main>
+    <div class="modal-overlay">
+      <div class="modal">
+        <div id="form">
+            <h2>Nova Transação</h2>
+            <form action="" onsubmit="Form.submit(event)">
+              <div class="input-group">
+                <label class="sr-only" for="item">Item</label>
+                <input
+                  type="text"
+                  id="item"
+                  name="item"
+                  placeholder="Nome do item"
+                />
+              </div>
+          
+              <div class="input-group">
+                <label class="sr-only" for="quantity">Quantidade</label>
+                <input
+                  type="number"
+                  id="quantity"
+                  name="quantity"
+                  placeholder="Quantidade"
+                />
+              </div>
+          
+              <div class="input-group">
+                <label class="sr-only" for="amount">Valor</label>
+                <input
+                  type="number"
+                  step="0.01"
+                  id="amount"
+                  name="amount"
+                  placeholder="0,00"
+                />
+                <small class="help">
+                  Use o sinal - para despesas e , (vírgula) para decimais
+                </small>
+              </div>
+          
+              <div class="input-group">
+                <label class="sr-only" for="date">Data</label>
+                <input
+                  type="date"
+                  id="date"
+                  name="date"
+                />
+              </div>
+          
+              <div class="input-group actions">
+                <a href="#"
+                  onclick="Modal.close()"
+                  class="button cancel">Cancelar</a>
+                <button type="submit" class="button save">Salvar</button>
+              </div>
+            </form>
+          </div>
+          
+      </div>
+    </div>
+    <footer>
+      <p>Engenharia de<a> </a>Requisitos <a> $</a></p>
+    </footer>
+
+    <script src="caixa.js"></script>
+    <script src="menu.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+  </body>
+</html>
