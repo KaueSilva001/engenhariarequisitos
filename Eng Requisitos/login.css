@@ -21,10 +21,10 @@ body {
 }
 .wrapper {
     position: relative;
-    width: 750px;
+    width: 800px;
     height: 450px;
     background: transparent;
-    border: 2px solid rgb(18, 108, 114);
+    border: 2px solid #204e98;
     overflow: hidden;
 }
 
@@ -123,7 +123,7 @@ body {
 
 .input-box input:focus,
 .input-box input:valid {
-    border-bottom-color: #0ef ;
+    border-bottom-color: #204e98 ;
 }
 
 .input-box label {
@@ -140,7 +140,7 @@ body {
 .input-box input:focus~label,
 .input-box input:valid~label{
 top: -5px;
-color: #0ef
+color: #204e98;
 }
 
 .input-box i {
@@ -154,7 +154,7 @@ color: #0ef
 }
 .input-box input:focus~i,
 .input-box input:valid~i {
-    color: #0ef;
+    color: #204e98;
 }
 
 .btn {
@@ -162,7 +162,7 @@ color: #0ef
     width: 100%;
     height: 45px;
     background: transparent;
-    border: 2px solid #0ef;
+    border: 2px solid #204e98;
     border-radius: 40px;
     cursor: pointer;
     font-size: 16px;
@@ -179,7 +179,7 @@ color: #0ef
     left: 0;
     width: 100%;
     height: 300%;
-    background: linear-gradient(#081b29,rgb(15, 104, 110), #081b29,#0f686e);
+    background: linear-gradient(#000000,#204e98, #081b29,#204e98);
     z-index: -1;
     transition: .5s;
 }
@@ -290,8 +290,8 @@ top: 0;
     right: 0;
     width: 850px;
     height: 600px;
-    background: linear-gradient(45deg, #081b29, #0f686e);
-    border-bottom: 3px solid #0f686e;
+    background: linear-gradient(45deg, #2c2c2c, #204e98);
+    border-bottom: 3px solid #fff;
     transform: rotate(10deg) skewY(40deg);
     transform-origin: bottom right;
     transition: 1.5s ease;
@@ -310,8 +310,8 @@ top: 0;
     left: 250px;
     width: 850px;
     height: 700px;
-    background: url('image/bg.png');
-    border-top: 3px solid #0ef;
+    background: linear-gradient(45deg, #ffffff, #fff);
+    border-top: 3px solid #fff;
     transform: rotate(0) skewY(0);
     transform-origin: bottom left;
     transition: 1.5s ease;
@@ -322,6 +322,3 @@ top: 0;
     transform: rotate(-11deg) skewY(-41deg);
     transition-delay: 1.2s;
   }
-
-
- 
